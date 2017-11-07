@@ -1,5 +1,5 @@
 package edu.luc.cs271.wordcount;
-
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
@@ -8,8 +8,23 @@ public class Main {
 
     // set up the scanner so that it separates words based on space and punctuation
     final Scanner input = new Scanner(System.in).useDelimiter("[^\\p{Alnum}]+");
-
-    // TODO complete this main program
+    HashMap<String, Integer> hashMap = new HashMap<>();
+    int size = hashMap.size();
+    ArrayList<Map.Entry<String, Integer>> list = new ArrayList<>(size);
+    while (input.hasNext()){
+      String next = input.next();
+      int more = hashMAp.getOrDefault(next, 0);
+      more++; 
+    }
+    WordCounter words = new WordCounter(hashMap);
+    for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+      list.add(entry);
+    }
+    Collections.sort(list, new DescendingByCount());
+    for (int i = 0; i < 10; i++) {
+      System.out.println(list.get(i).getKey() + "is" + list.get(i).getValue());
+    }
+    // TODO complete this main program DONE
     // 1. create a WordCounter instance
     // 2. use this to count the words in the input
     // 3. determine the size of the resulting map

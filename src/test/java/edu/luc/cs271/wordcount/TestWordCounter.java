@@ -35,8 +35,9 @@ public class TestWordCounter {
   @Test
   public void testGetCountNonEmpty() {
     words.countWords( Arrays.asList("placze","z", "powodu", "tej", "klasy").iterator());
-    assertEquals(words.getCount("z"), 2);
     assertEquals(words.getCount("placze"), 1);
+    assertEquals(words.getCount("z"), 1);
+    assertEquals(words.getCount("jestem smieczona"), 0);
     assertEquals(words.getCount("pierdole"), 0);
     
     // TODO run the SUT on a specific String iterator with some repeated words, DONE??

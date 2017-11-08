@@ -15,15 +15,15 @@ public class TestWordCounter {
 
   // TODO declare a reference to the SUT (system under test), i.e., WordCounter DONE
   private WordCounter words;
-  Map<String, Integer> tests = new HashMap<String, Integer>();
+  
   @Before
   public void setUp() {
-    words = new WordCounter(new HashMap<>());
+    words= new WordCounter( new HashMap<>());
   }  // TODO create the SUT instance DONE
 
   @After
   public void tearDown() {
-   words = null;
+    words = null;
   }  // TODO set the SUT instance to null DONE
 
   @Test
@@ -34,13 +34,11 @@ public class TestWordCounter {
 
   @Test
   public void testGetCountNonEmpty() {
-    ArrayList<String> testIt;
-    testIt = new ArrayList<String>(Arrays.asList("placze","z", "powodu", "tej", "klasy"));
-    words.countWords(testIt.iterator());
-    assertEquals(words.getCount("z"), 1);
-    assertEquals(words.getCount("klazy"), 4);
-    assertEquals(words.getCount("pierdole"), -1);
-    assertEquals(words.getCount("bigos"), -1); 
+    words.countWords( Arrays.asList("placze","z", "powodu", "tej", "klasy").iterator());
+    assertEquals(words.getCount("z"), 2);
+    assertEquals(words.getCount("placze"), 1);
+    assertEquals(words.getCount("pierdole"), 0);
+    
     // TODO run the SUT on a specific String iterator with some repeated words, DONE??
     // then use assertions to verify the correct counts
     // do this for at least two words in the iterator and two not in the iterator

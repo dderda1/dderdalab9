@@ -1,5 +1,5 @@
 package edu.luc.cs271.wordcount;
-import java.util.Array;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;

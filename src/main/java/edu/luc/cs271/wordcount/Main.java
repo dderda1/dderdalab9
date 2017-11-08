@@ -13,7 +13,7 @@ public class Main {
     ArrayList<Map.Entry<String, Integer>> list = new ArrayList<>(size);
     while (input.hasNext()){
       String next = input.next();
-      int more = hashMAp.getOrDefault(next, 0);
+      int more = hashMap.getOrDefault(next, 0);
       more++; 
     }
     WordCounter words = new WordCounter(hashMap);
